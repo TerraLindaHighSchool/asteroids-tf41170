@@ -13,21 +13,21 @@ public class Explosion extends Actor
     private final static int IMAGE_COUNT= 12;
     
     /** 
-     * The images in the explosion. This is static so the images are not
+     * The images in the Blood. This is static so the images are not
      * recreated for every object (improves performance significantly).
      */
     private static GreenfootImage[] images;
     
-    /** Current size of the explosion */
+    /** Current size of the Blood */
     private int imageNo = 0;
     
     /** How much do we increment the index in the explosion animation. */
     private int increment=1;
     
     /**
-     * Create a new explosion.
+     * Create a new Blood.
      */
-    public Explosion() 
+    public Blood()
     {
         initializeImages();
         setImage(images[0]);
@@ -35,13 +35,13 @@ public class Explosion extends Actor
     }    
     
     /** 
-     * Create the images for explosion.
+     * Create the images for Blood.
      */
     public synchronized static void initializeImages() 
     {
         if(images == null) 
         {
-            GreenfootImage baseImage = new GreenfootImage("explosion-big.png");
+            GreenfootImage baseImage = new GreenfootImage("Blood.png");
             images = new GreenfootImage[IMAGE_COUNT];
             for (int i = 0; i < IMAGE_COUNT; i++)
             {
