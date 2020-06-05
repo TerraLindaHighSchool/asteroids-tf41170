@@ -18,7 +18,7 @@ public class Desert extends World
     {
         super(600, 500, 1);
         
-        Rocket rocket = new Rocket();
+        Lizard rocket = new Lizard();
         addObject(rocket, getWidth()/2 + 100, getHeight()/2);
         
         addAsteroids(startAsteroids);
@@ -26,7 +26,7 @@ public class Desert extends World
         scoreCounter = new Counter("Score: ");
         addObject(scoreCounter, 60, 480);
 
-        Explosion.initializeImages();
+        Blood.initializeImages();
         ProtonWave.initializeImages();
     }
     
@@ -40,7 +40,7 @@ public class Desert extends World
         {
             int x = Greenfoot.getRandomNumber(getWidth()/2);
             int y = Greenfoot.getRandomNumber(getHeight()/2);
-            addObject(new Asteroid(), x, y);
+            addObject(new Snake(), x, y);
 
     }
     }

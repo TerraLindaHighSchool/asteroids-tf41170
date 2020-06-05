@@ -7,20 +7,20 @@ import greenfoot.*;
  * 
  * @version 1.1
  */
-public class Rocket extends SmoothMover
+public class Lizard extends SmoothMover
 {
     private static final int gunReloadTime = 5;         // The minimum delay between firing the gun.
 
     private int reloadDelayCount;               // How long ago we fired the gun the last time.
     private int waveCount;
     
-    private GreenfootImage rocket = new GreenfootImage("rocket.png");    
+    private GreenfootImage rocket = new GreenfootImage("lizard.png");    
     private GreenfootImage rocketWithThrust = new GreenfootImage("rocketWithThrust.png");
 
     /**
      * Initialise this rocket.
      */
-    public Rocket()
+    public Lizard()
     {
         reloadDelayCount = 5;
     }
@@ -70,7 +70,7 @@ public class Rocket extends SmoothMover
        }
        else
        {
-           setImage("rocket.png");    
+           setImage("lizard.png");    
        }
     }
     
@@ -81,7 +81,7 @@ public class Rocket extends SmoothMover
     {
         if (reloadDelayCount >= gunReloadTime) 
         {
-            Bullet bullet = new Bullet (getVelocity(), getRotation());
+            Poison bullet = new Poison (getVelocity(), getRotation());
             getWorld().addObject (bullet, getX(), getY());
             bullet.move ();
             reloadDelayCount = 5;
@@ -90,10 +90,10 @@ public class Rocket extends SmoothMover
     
     private void checkCollision()
     {
-        if( getOneIntersectingObject(Asteroid.class) != null) 
+        if( getOneIntersectingObject(Snake.class) != null) 
         {
              Desert space = (Desert) getWorld();
-           space.addObject(new Explosion(),getX(),getY());
+           space.addObject(new Blood(),getX(),getY());
            space.removeObject(this);
            space.gameOver();
 

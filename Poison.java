@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author Poul Henriksen
  * @author Michael Kölling
  */
-public class Bullet extends SmoothMover
+public class Poison extends SmoothMover
 {
     /** The damage this bullet will deal */
     private static final int damage = 16;
@@ -19,14 +19,14 @@ public class Bullet extends SmoothMover
     /**
      * Default constructor for testing.
      */
-    public Bullet()
+    public Poison()
     {
     }
     
     /**
      * Create a bullet with given speed and direction of movement.
      */
-    public Bullet(Vector speed, int rotation)
+    public Poison(Vector speed, int rotation)
     {
         super(speed);
         setRotation(rotation);
@@ -54,7 +54,7 @@ public class Bullet extends SmoothMover
      */
     private void checkAsteroidHit()
     {
-        Asteroid asteroid = (Asteroid) getOneIntersectingObject(Asteroid.class);
+        Snake asteroid = (Snake) getOneIntersectingObject(Snake.class);
         if (asteroid != null)
         {
             ((Desert) getWorld()).updateScore(pointsToAdd);
