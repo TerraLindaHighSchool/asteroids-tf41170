@@ -15,7 +15,7 @@ public class Lizard extends SmoothMover
     private int waveCount;
     
     private GreenfootImage rocket = new GreenfootImage("lizard.png");    
-    private GreenfootImage rocketWithThrust = new GreenfootImage("rocketWithThrust.png");
+    private GreenfootImage rocketWithThrust = new GreenfootImage("lizard2.png");
 
     /**
      * Initialise this rocket.
@@ -65,7 +65,7 @@ public class Lizard extends SmoothMover
     {
        if (boosterOn)
        {
-           setImage("rocketWithThrust.png");
+           setImage("lizard2.png");
            addToVelocity(new Vector(getRotation(), 0.3));
        }
        else

@@ -31,7 +31,7 @@ public class Poison extends SmoothMover
         super(speed);
         setRotation(rotation);
         addToVelocity(new Vector(rotation, 15));
-        Greenfoot.playSound("EnergyGun.wav");
+        Greenfoot.playSound("toxic.wav");
     }
     
     /**

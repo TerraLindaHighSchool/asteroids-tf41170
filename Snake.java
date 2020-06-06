@@ -28,7 +28,7 @@ public class Snake extends SmoothMover
      */
     public Snake(int size)
     {
-        super(new Vector(Greenfoot.getRandomNumber(360), 2));
+        super(new Vector(Greenfoot.getRandomNumber(500), 2));
         setSize(size);
     }
     
@@ -85,7 +85,7 @@ public class Snake extends SmoothMover
      */
     private void breakUp() 
     {
-        Greenfoot.playSound("Explosion.wav");
+        Greenfoot.playSound("death.wav");
         
         if (size <= 16) {
             getWorld().removeObject(this);
